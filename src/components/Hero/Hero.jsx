@@ -1,60 +1,43 @@
 import { motion } from "framer-motion";
-import { FaArrowDown } from "react-icons/fa";
-import ParticleBackground from "../ParticleBackground/ParticleBackground";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
 
-      {/* Animated Background */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-cyan-500 rounded-full blur-[150px] opacity-20"></div>
-
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500 rounded-full blur-[180px] opacity-20"></div>
-      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-black" />
 
       <motion.div
-        initial={{ opacity: 0, y: 100 }}
+        initial={{ opacity: 0, y: 80 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2 }}
-        className="relative z-10 text-center px-4"
+        transition={{ duration: 1 }}
+        className="text-center z-10 px-6"
       >
-        <h1 className="text-7xl md:text-8xl font-black bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
-          ADITYA
+        <h1 className="text-7xl font-bold">
+          Aditya Gaikar
         </h1>
 
-        <h1 className="text-7xl md:text-8xl font-black text-white">
-          GAIKAR
-        </h1>
+        <TypeAnimation
+          sequence={[
+            "SEO Strategist",
+            2000,
+            "Growth Marketer",
+            2000,
+            "Storyteller",
+            2000,
+            "Brand Builder",
+            2000,
+          ]}
+          repeat={Infinity}
+          className="text-cyan-400 text-3xl mt-6"
+        />
 
-        <p className="text-cyan-400 mt-6 text-2xl">
-          Marketing Leader • SEO Strategist • Storyteller
+        <p className="mt-8 text-xl max-w-3xl mx-auto">
+          Turning ideas into traffic,
+          brands into conversations,
+          and content into growth.
         </p>
-
-        <p className="max-w-3xl mx-auto mt-8 text-lg text-gray-300">
-          Turning ideas into traffic, brands into conversations,
-          and content into measurable growth.
-        </p>
-
-        <div className="mt-10 flex justify-center gap-6">
-          <button className="px-8 py-4 rounded-full bg-cyan-500 hover:scale-110 transition">
-            Explore Journey
-          </button>
-
-          <button className="px-8 py-4 rounded-full border border-white hover:bg-white hover:text-black transition">
-            View Work
-          </button>
-        </div>
       </motion.div>
-
-      <div className="absolute bottom-10 animate-bounce">
-        <FaArrowDown size={25} />
-      </div>
-
     </section>
-    
   );
-  <div className="absolute right-10 top-20 w-[500px] h-[500px]">
-   <Globe />
-</div>
 }
